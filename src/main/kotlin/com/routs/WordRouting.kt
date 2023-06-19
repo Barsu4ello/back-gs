@@ -31,7 +31,7 @@ fun Application.configureRoutingWord(parentRoute: String) {
                 post {
                     val word = call.receive<ExposedWord>()
                     val id: Long = wordService.save(word)
-                    call.respondText("Word with $id stored correctly", status = HttpStatusCode.Created)
+                    call.respond(HttpStatusCode.Created, id)
                 }
 
                 put("/{id}") {
