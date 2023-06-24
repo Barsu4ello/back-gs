@@ -43,7 +43,6 @@ fun Application.configureRoutingWord(parentRoute: String) {
                     }
                     call.respondText("Word with $id not found", status = HttpStatusCode.NotFound)
                 }
-                
                 delete("/{id}") {
                     val id = call.parameters["id"]!!.toLong()
                     val isRemoved: Boolean = wordService.delete(id)

@@ -5,6 +5,7 @@ val postgres_version: String by project
 val h2_version: String by project
 val exposed_version: String by project
 val kmongo_version: String by project
+val rabbit_version: String by project
 
 plugins {
     kotlin("jvm") version "1.8.21"
@@ -36,6 +37,7 @@ dependencies {
     implementation("org.postgresql:postgresql:$postgres_version")
     implementation("org.litote.kmongo:kmongo-async:$kmongo_version")
     implementation("org.litote.kmongo:kmongo-coroutine:$kmongo_version")
+    implementation("com.rabbitmq:amqp-client:$rabbit_version")
 
 //    implementation("com.h2database:h2:$h2_version")
     implementation("org.jetbrains.exposed:exposed-core:$exposed_version")
